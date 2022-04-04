@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.55">
+
+  <title>Smart Farm</title>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body class="{{ Body_Time }}">
+  <div class="Section"  id="{{ Section_Time }}">
+    <div class="info">
+      <h2>Smart Farm</h2>
+      <a href="/"><ion-icon name="leaf-outline" style="font-size: 240px;"></ion-icon></a>
+      <p>Click to Status Page</p>
+    </div>
+    <div class="inputForm">
+      <form action="/edit" method="GET" id="Day_Change"></form>
+      <button type="submit" name="Time" value="Day" form="Day_Change" class="Day_Change-btn">
+        <ion-icon name="sunny-outline" style="font-size: 48px; padding: 12px;"></ion-icon>
+      </button>
+      <button type="submit" name="Time" value="Night" form="Day_Change" class="Day_Change-btn">
+        <ion-icon name="moon-outline" style="font-size: 48px; padding: 12px;"></ion-icon>
+      </button>
+      <form action="#" method="POST">
+        <ul class="noBullet">
+          <li>
+            <label><input type="number" class="inputFields" name="Humid" placeholder="Humid : {{ Humid_value }}"></label>
+          </li>
+          <li>
+            <label><input type="number" class="inputFields" name="Temp" placeholder="Temperature : {{ Temp_value }}"></label>
+          </li>
+          <li>
+            <label><input type="number" class="inputFields" name="Co2" placeholder="Co2 : {{ Co2_value }}"></label>
+          </li>
+          <li id="center-btn">
+            <input type="submit" id="join-btn" name="submit" alt="submit" value="submit">
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
