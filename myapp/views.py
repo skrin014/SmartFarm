@@ -3,6 +3,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.views.decorators.csrf import csrf_exempt
 #Django
 
+import os
 import random
 from datetime import datetime
 #python
@@ -13,7 +14,7 @@ from firebase_admin import db
 #firebase
 
 db_url = "https://smartfarm-28dd5-default-rtdb.firebaseio.com/"
-cred = credentials.Certificate('./myapp/serviceAccountKey.json')
+cred = credentials.Certificate(os.getcwd() + '/myapp/serviceAccountKey.json')
 default_app = firebase_admin.initialize_app(cred, {'databaseURL':db_url})
 #firebase
 
